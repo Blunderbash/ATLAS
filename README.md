@@ -1,5 +1,7 @@
 # Water-Level-Monitoring-System (WIP)
 
+Changelog v 1.0.6 --Edited Index.php and added Index.css
+
 Changelog v 1.0.5 --Merged new PHP,CSS,HTML into repository
 
 Changelog v 1.0.4 --Switching from uno to esp8266 module (NodeMCU),Revamped the arduino codes
@@ -25,6 +27,14 @@ In this project we used tools that are required to get the project going which a
 2.SR-04 Ultrasonic Sensor
 
 3.Adequate 5V power supply
+
+**Contributors**
+
+1.Ekky Kharismadhany (2210181043)
+
+2.M. Iqbal A.F.      (2210181049)
+
+3.Firja H.M.         (2210181056)
 
 
 
