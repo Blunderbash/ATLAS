@@ -11,14 +11,14 @@ const int PIN = D1;
 long duration;
 int distance;
 //int heightofwater;
-//setting the distance from sensor to water  in CentiMeters (may vary) 
+//setting the distance from sensor to water in CentiMeters (may vary) 
 //int sensortowater = 10000;
 
 
 void setup() {
 pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
 pinMode(echoPin, INPUT); // Sets the echoPin as an Input
-pinMode(PIN,OUTPUT);
+pinMode(PIN,OUTPUT); //Sets the input pin for the buzzer
   Serial.begin(9600);
  
  
@@ -52,12 +52,12 @@ digitalWrite(trigPin, LOW);
 duration = pulseIn(echoPin, HIGH);
 // Calculating the distance
 distance= duration*0.034/2;
-//setting the distance from the sensor my vary
+// !REMINDER! setting the distance from the sensor my vary
 //heightofwater = sensortowater - distance;
 
 Serial.print("Distance to object (cm): ");
 
-
+// the parameters for the buzzer
 if (distance < 50){
   tone(PIN,1000);
   delay(1000);
@@ -78,10 +78,10 @@ if (distance < 50){
   }
  
   // We now create a URI for the request
-  //change the variable to heightofwater once you've set the sensor to water
+  //!REMINDER! change the variable to heightofwater once you've set the sensor to water
   String url = "/node_water/add.php?";
   url += "tinggi_air=";
-  url += distance;
+  url += heightofwater;
  
   Serial.print("Requesting URL: ");
   Serial.println(url);
@@ -117,5 +117,6 @@ if (distance < 50){
  
   Serial.println();
   Serial.println("closing connection");
+  //you can change the interval using this funtion below (counts in microseconds)
   delay(3600000);
 }
