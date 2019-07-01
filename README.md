@@ -1,5 +1,7 @@
 # Water-Level-Monitoring-System (WIP)
 
+Changelog v 1.0.7 --Added comments,descriptions,and personal informations for each of the contributors
+
 Changelog v 1.0.6 --Edited Index.php and added Index.css
 
 Changelog v 1.0.5 --Merged new PHP,CSS,HTML into repository
