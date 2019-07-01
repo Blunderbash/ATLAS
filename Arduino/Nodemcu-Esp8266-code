@@ -11,14 +11,14 @@ const int PIN = D1;
 long duration;
 int distance;
 //int heightofwater;
-//setting the distance from sensor to water  in CentiMeters (may vary) 
+//setting the distance from sensor to water in CentiMeters (may vary) 
 //int sensortowater = 10000;
 
 
 void setup() {
 pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
 pinMode(echoPin, INPUT); // Sets the echoPin as an Input
-pinMode(PIN,OUTPUT);
+pinMode(PIN,OUTPUT); //Sets the input pin for the buzzer
   Serial.begin(9600);
  
  
@@ -52,14 +52,14 @@ digitalWrite(trigPin, LOW);
 duration = pulseIn(echoPin, HIGH);
 // Calculating the distance
 distance= duration*0.034/2;
-//setting the distance from the sensor my vary
+// !REMINDER! setting the distance from the sensor my vary
 //heightofwater = sensortowater - distance;
 
 Serial.print("Distance to object (cm): ");    //the value of the distance between the sensor to the surface of water(not to be confused with height of water)
 
 
-
-if (distance < 50){         //if the distance are below 50 the buzzer will turn on and spits alerting sound
+// the parameters for the buzzer
+if (distance < 50){
   tone(PIN,1000);
   delay(1000);
   noTone(PIN);
@@ -79,10 +79,11 @@ if (distance < 50){         //if the distance are below 50 the buzzer will turn 
   }
  
   // We now create a URI for the request
-  //change the variable to heightofwater once you've set the sensor to water
+  //!REMINDER! change the variable to heightofwater once you've set the sensor to water
   String url = "/node_water/add.php?";
-  url += "tinggi_air="; //where the data will be inputted
-  url += distance;    //the data that is inputted
+  url += "tinggi_air=";//where the data will be inputted
+  url += heightofwater;//the data that is inputted
+
  
   Serial.print("Requesting URL: ");
   Serial.println(url);
@@ -118,5 +119,7 @@ if (distance < 50){         //if the distance are below 50 the buzzer will turn 
  
   Serial.println();
   Serial.println("closing connection");
-  delay(3600000);  //this makes the nodeMCU uploads data in a 1 hour ratio
+  //you can change the interval using this funtion below (counts in microseconds)
+   delay(3600000);  //this makes the nodeMCU uploads data in a 1 hour ratio
+
 }
