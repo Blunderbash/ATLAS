@@ -28,7 +28,9 @@ In this project we used tools that are required to get the project going which a
 
 2.SR-04 Ultrasonic Sensor
 
-3.Adequate 5V power supply
+3.Buzzer
+
+4.Adequate 5V power supply
 
 **Contributors**
 
