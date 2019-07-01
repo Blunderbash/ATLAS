@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Data Sensor</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="index.css"> //<--link to css sheet-->
 	
 </head>
 <body>
@@ -20,15 +20,15 @@
 			<li><a href="proyek_WS.php">Proyek WS</a></li>
 		</ul>
 	</div>
-    <form action="" method="post">
+    <form action="" method="post"> <--table search-->
         <input type="date" name="data">
-        <input type="submit" name="submit" value="Cari Data">
+        <input type="submit" name="submit" value="Cari Data"> 
     </form>
  
     <?php
-        include('koneksi.php');
+        include('koneksi.php'); //call "koneksi.php
  
-        if($_SERVER['REQUEST_METHOD'] == "POST") {
+        if($_SERVER['REQUEST_METHOD'] == "POST") { //checking time stamp
             $dataWaktu = $_POST['data'];
             $sql = "SELECT * FROM tbl_water WHERE data_waktu LIKE '%" . $dataWaktu . "%'";
         }else{
@@ -36,18 +36,18 @@
             $sql = "SELECT * FROM tbl_water WHERE data_waktu LIKE '%" . $dataActual . "%'";
         }
  
-        $stmt = $PDO->prepare($sql);
+        $stmt = $PDO->prepare($sql); //starting PDO protocol
         $stmt->execute();
-        echo "<br>";
+        echo "<br>"; //making table
         echo "<table border=\"1\" align=\"center\">";
         echo "<tr> <th>Tinggi Air</th>
                    <th>Waktu</th> </tr>";
-        while ($tampil = $stmt->fetch(PDO::FETCH_OBJ)){
-            $timestamp = strtotime($tampil->data_waktu);
+        while ($tampil = $stmt->fetch(PDO::FETCH_OBJ)){ //read data from db
+            $timestamp = strtotime($tampil->data_waktu); //sort time periodically
             $dateTabel = date('d/m/Y H:i:s', $timestamp);
  
             echo "<tr>";
-            echo "<td>" . $tampil->tinggi_air . "</td>";
+            echo "<td>" . $tampil->tinggi_air . "</td>";//show data
             echo "<td>" . $dateTabel . "</td>";
             echo "</tr>";
         }
