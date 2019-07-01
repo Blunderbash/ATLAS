@@ -1,4 +1,4 @@
-# Water-Level-Monitoring-System (WIP)
+# Headwater Level Alert System (ATLAS)
 
 Changelog v 1.0.7 --Added comments,descriptions,and personal informations for each of the contributors
 
