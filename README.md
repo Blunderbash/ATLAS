@@ -30,7 +30,7 @@ In this project we used tools that are required to get the project going which a
 
 **Contributors**
 
-1.Ekky Kharismadhany (2210181043) (Github ID:Apollo1407
+1.Ekky Kharismadhany (2210181043) (Github ID:Apollo1703)
 
 2.M. Iqbal A.F.      (2210181049) (Github ID:miqbalalfarabi)
 
