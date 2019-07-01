@@ -1,4 +1,4 @@
-.wrap
+.wrap //control background element
 {
 	background: #E0FFFF;
 	width: 100%;
@@ -8,7 +8,7 @@
 	align: center;
 	
 }
-.wrap .header ul
+.wrap .header ul //header
 {
 	padding: 0;
 	margin:0;
@@ -16,11 +16,11 @@
 	overflow: hidden;
 	text-decoration: none;
 }
-.tabel
+.tabel 
 {
 	align: center;
 }
-.wrap .header ul li
+.wrap .header ul li //header menu
 {
 	float: left;
 	list-style-type: none;
